@@ -43,6 +43,10 @@ body {
   gap: 10px;
 }
 
+.data-points {
+  color: #5A8BBB;
+}
+
 #game div {
   display: flex;
   justify-content: center;

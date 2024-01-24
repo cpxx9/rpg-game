@@ -24,17 +24,17 @@ const weapons = [
 ];
 const monsters = [
   {
-    name: "slime",
+    name: "Slime",
     level: 2,
     health: 15
   },
   {
-    name: "fanged beast",
+    name: "Wolf",
     level: 8,
     health: 60
   },
   {
-    name: "dragon",
+    name: "Dragon",
     level: 20,
     health: 300
   }
@@ -54,7 +54,7 @@ const locations = [
   },
   {
     name: "cave",
-    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
+    "button text": ["Fight slime", "Fight wolf", "Back to town square"],
     "button functions": [fightSlime, fightBeast, goTown],
     text: "You enter the cave. You see some monsters."
   },
@@ -96,7 +96,6 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 function update(location) {
-  monsterStats.style.display = "flex";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
   button3.innerText = location["button text"][2];
@@ -108,6 +107,7 @@ function update(location) {
 
 function goTown() {
   update(locations[0]);
+  monsterStats.style.display = "none";
 }
 
 function goStore() {
@@ -157,21 +157,24 @@ function sellWeapon() {
     text.innerText = "You sold a " + currentWeapon + ".";
     text.innerText += " In your inventory you have: " + inventory;
   } else {
-    text.innerText = "Don't sell your only weapon!";
+    text.innerText = "You can't sell your only weapon!";
   }
 }
 
 function fightSlime() {
+  monsterStats.style.display = "flex";
   fighting = 0;
   goFight();
 }
 
 function fightBeast() {
+  monsterStats.style.display = "flex";
   fighting = 1;
   goFight();
 }
 
 function fightDragon() {
+  monsterStats.style.display = "flex";
   fighting = 2;
   goFight();
 }
