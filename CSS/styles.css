@@ -6,6 +6,17 @@ body {
 body {
   background-color: #0a0a23;
   margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #text {
@@ -15,11 +26,27 @@ body {
 }
 
 #game {
-  max-width: 500px;
-  max-height: 400px;
+  max-width: 60vw;
+  max-height: 50vh;
   background-color: #ffffff;
   color: #ffffff;
   padding: 10px;
+}
+
+#game span {
+  font-size: 45px;
+}
+
+#game button {
+  font-size: 32px;
+}
+
+#monsterStats span {
+  font-size: 32px;
+}
+
+#game #text {
+  font-size: 36px;
 }
 
 #controls,
