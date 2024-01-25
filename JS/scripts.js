@@ -5,6 +5,8 @@ let currentWeapon = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];
+let inAFight = false;
+let timeout;
 
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
@@ -106,8 +108,24 @@ function update(location) {
 }
 
 function goTown() {
+  if (inAFight) {
+    const random = Math.random();
+    console.log(random);
+    if (random < .3) {
+      text.innerText = "You couldn't get away!";
+      health -= getMonsterAttackValue(monsters[fighting].level);
+      healthText.innerText = health;
+      if (health <= 0) {
+        lose();
+      }
+    } else {
+      update(locations[0]);
+      monsterStats.style.display = "none";
+    }
+  } else {
   update(locations[0]);
   monsterStats.style.display = "none";
+  }
 }
 
 function goStore() {
@@ -181,6 +199,7 @@ function fightDragon() {
 
 function goFight() {
   update(locations[3]);
+  inAFight = true;
   monsterHealth = monsters[fighting].health;
   monsterStats.style.display = "block";
   monsterName.innerText = monsters[fighting].name;
@@ -228,11 +247,22 @@ function defeatMonster() {
   xp += monsters[fighting].level;
   goldText.innerText = gold;
   xpText.innerText = xp;
+  inAFight = false;
   update(locations[4]);
 }
 
 function lose() {
+  button1.disabled = true;
+  button2.disabled = true;
+  button3.disabled = true;
+  timeout = setTimeout(loseNoTimer, 2000);
+}
+
+function loseNoTimer() {
   update(locations[5]);
+  button1.disabled = false;
+  button2.disabled = false;
+  button3.disabled = false;
 }
 
 function winGame() {
