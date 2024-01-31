@@ -62,7 +62,9 @@ const locations = [
     name: "cave",
     "button text": ["Fight slime", "Fight wolf", "Back to town square"],
     "button functions": [fightSlime, fightBeast, goTown],
-    text: "You enter the cave. You see some monsters."
+    text: "You enter the cave. You see some monsters.",
+    backgroundCover: "url('./img/cave.jpg')",
+    backgroundFill: "cover"
   },
   {
     name: "fight",
@@ -184,6 +186,8 @@ function fightBeast() {
 function fightDragon() {
   monsterStats.style.display = "flex";
   fighting = 2;
+  contentBackground.style.backgroundImage = "url('./img/dragon.jpg')";
+  contentBackground.style.backgroundSize = "cover";
   goFight();
 }
 
