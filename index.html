@@ -9,29 +9,31 @@
     <script src="JS/scripts.js" defer></script>
   </head>
   <body>
-    <header>
-    </header>
-    <main class="content">
-      <div id="game">
-        <div id="stats">
-          <span class="stat">XP: <strong><span class="data-points" id="xpText">0</span></strong></span>
-          <span class="stat">Health: <strong><span class="data-points" id="healthText">100</span></strong></span>
-          <span class="stat">Gold: <strong><span class="data-points" id="goldText">50</span></strong></span>
+    <div class="background-wrapper">
+      <header>
+      </header>
+      <main class="content">
+        <div id="game">
+          <div id="stats">
+            <span class="stat">XP: <strong><span class="data-points" id="xpText">0</span></strong></span>
+            <span class="stat">Health: <strong><span class="data-points" id="healthText">100</span></strong></span>
+            <span class="stat">Gold: <strong><span class="data-points" id="goldText">50</span></strong></span>
+          </div>
+          <div id="controls">
+            <button id="button1">Go to store</button>
+            <button id="button2">Go to cave</button>
+            <button id="button3">Fight dragon</button>
+          </div>
+          <div id="monsterStats">
+            <span class="stat">Monster Name: <strong><span class="data-points" id="monsterName"></span></strong></span>
+            <span class="stat">Health: <strong><span class="data-points" id="monsterHealth"></span></strong></span>
+          </div>
+          <div id="text">
+            Welcome to Save the Town. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+          </div>
         </div>
-        <div id="controls">
-          <button id="button1">Go to store</button>
-          <button id="button2">Go to cave</button>
-          <button id="button3">Fight dragon</button>
-        </div>
-        <div id="monsterStats">
-          <span class="stat">Monster Name: <strong><span class="data-points" id="monsterName"></span></strong></span>
-          <span class="stat">Health: <strong><span class="data-points" id="monsterHealth"></span></strong></span>
-        </div>
-        <div id="text">
-          Welcome to Save the Town. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
-        </div>        
-      </div>
-    </main>
+      </main>
+    </div>
     <footer>
       <p>© 2023 by Cole Pratte | <a href="mailto:prattecole@gmail.com">prattecole@gmail.com</a> | <a href="credits.html" target="_blank" rel="noopener noreferrer">Credits</a></p>
       <ul class="socials">

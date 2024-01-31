@@ -16,7 +16,7 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
-const contentBackground = document.querySelector('.content');
+const contentBackground = document.querySelector('.background-wrapper');
 
 const weapons = [
   { name: 'stick', power: 5 },
@@ -46,15 +46,17 @@ const locations = [
     name: "town square",
     "button text": ["Go to store", "Go to cave", "Fight dragon"],
     "button functions": [goStore, goCave, fightDragon],
-    text: "You are in the town square. You see a sign that says \"Store\".",
-    backgroundImage: "url('./img/town.jpg')"
+    text: "You are in the town square. You see a sign that says \"Store\", and a cave in the distance.",
+    backgroundCover: "url('./img/town.jpg')",
+    backgroundFill: "contain"
   },
   {
     name: "store",
     "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
     text: "You enter the store.",
-    backgroundImage: "url('./img/store.jpg')"
+    backgroundCover: "url('./img/store.jpg')",
+    backgroundFill: "cover"
   },
   {
     name: "cave",
@@ -107,6 +109,8 @@ function update(location) {
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
   text.innerText = location.text;
+  contentBackground.style.backgroundImage = location["backgroundCover"];
+  contentBackground.style.backgroundSize = location["backgroundFill"];
 }
 
 function goTown() {
