@@ -37,6 +37,7 @@ body {
   max-width: 60vw;
   max-height: 50vh;
   background-color: #ffffff;
+  opacity: .9;
   color: #ffffff;
   padding: 10px;
   display: flex;
