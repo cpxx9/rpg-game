@@ -105,6 +105,10 @@ button:disabled {
   opacity: .6;
 }
 
+div#text {
+  display: inline;
+}
+
 /* FOOTER 
 _______________________________________________________*/
 a {
